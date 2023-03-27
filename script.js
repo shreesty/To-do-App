@@ -1,47 +1,38 @@
 
 
 const taskInput = document.getElementById("taskInput");
-
 const enterButton = document.getElementById("enterButton");
-const tasklist = document.getElementById("task-list");
-
-const completed = document.getElementById("taskInput");
-
-const pending = document.getElementById("pending");
-
-
-let completedTasks = 0;
-let pendingTasks = 0;
-
+const taskList = document.getElementById("task-list");
 
 
 enterButton.addEventListener("click", () => {
     const task = taskInput.value.trim();
   
+   
     if (task === "") {
-      alert("Please enter a task.");
-      return;
-    }
-  
-    const listItem = document.createElement("li");
-    const checkbox = document.createElement("input");
-    const taskText = document.createElement("span");
-  
-  
-
-
-
+        alert("Please enter a task.");
+        return;
+      }
     
-  });
-
-
-
-
-
-
-
-
-
+      const listItem = document.createElement("li");
+      const checkbox = document.createElement("input");
+      const taskText = document.createElement("span");
+    
+      checkbox.type = "checkbox";
+      checkbox.addEventListener("change", () => {
+       
+      });
+    
+      taskText.textContent = task;
+    
+      listItem.appendChild(checkbox);
+      listItem.appendChild(taskText);
+      taskList.appendChild(listItem);
+    
+      taskInput.value = "";
+    });
+    
+ 
 
 
 
