@@ -1,0 +1,63 @@
+
+body
+{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#enterButton
+{
+    height:50px;
+    width:70px;
+    margin:20px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+#enterButton:hover 
+{
+    
+    color:white;
+    background-color: black;
+    font-weight: bold;
+
+}
+
+header > h1
+{
+    color:blueviolet;
+}
+
+#taskInput
+{
+    margin-top: 80px;
+    text-align: center;
+    height:50px;
+    width:300px;
+    color:darkgreen;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 15px;
+}
+
+#task-list
+{
+    font-size: 24px;
+    color:blueviolet;
+    font-weight: bold;
+    list-style-type: none;
+    
+}
+
+li
+{
+    color:darkgoldenrod;
+    margin: 10px;
+}
