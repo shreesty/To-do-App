@@ -1,98 +1,50 @@
 
+let addTask=document.getElementById('add-task');
+let inputTask=document.getElementById('input-task');
+let taskContainer=document.getElementById('task-container');
 
-const taskInput = document.getElementById("taskInput");
-const enterButton = document.getElementById("enterButton");
-const taskList = document.getElementById("task-list");
+addTask.addEventListener('click',function()
+{
+
+let task=document .createElement('div');
+task.classList.add('task');
+
+let li=document.createElement('li');
+li.innerText=`${inputTask.value}`; 
+task.appendChild(li);
+
+let checkButton=document.createElement('button');
+checkButton.innerHTML='<i class="completed">Completed</i>';
+checkButton.classList.add('checkTask');
+task.appendChild(checkButton); 
 
 
-enterButton.addEventListener("click", () => {
-    const task = taskInput.value.trim();
-  
-   
-    if (task === "") {
-        alert("Please enter a task.");
-        return;
-      }
+let deleteButton=document.createElement('button');
+deleteButton.innerHTML='<i class="delete">Delete</i>';
+deleteButton.classList.add('deleteTask');
+task.appendChild(deleteButton)
+
+if(inputTask.value==="")
+{
+    alert("Please enter a task!")
+}
+else
+{
+    taskContainer.appendChild(task);
+}
+
+inputTask.value="";
+
+checkButton.addEventListener("click",function()
+{
+    li.style.textDecoration="line-through";
+
+})
+
+deleteButton.addEventListener("click",function(e)
+{
     
-      const listItem = document.createElement("li");
-      const checkbox = document.createElement("input");
-      const taskText = document.createElement("span");
-    
-      checkbox.type = "checkbox";
-      checkbox.addEventListener("change", () => {
-       
-      });
-    
-      taskText.textContent = task;
-    
-      listItem.appendChild(checkbox);
-      listItem.appendChild(taskText);
-      taskList.appendChild(listItem);
-    
-      taskInput.value = "";
-    });
-    
- 
+    task.remove();
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let headerTitle = document.getElementById('#header-title');
-// // headerTitle.textContent ="Hello";
-
-// let tasks = document.getElementsByClassName('list-group-task')
-
-// let input=document.querySelector('input');
-// input.style.color="blue";
-// input.style.backgroundColor="lightgrey";
-
-
-// // let Enter= document.querySelector('#add-btn');
-
-// let oddTask = document.querySelectorAll('li:nth-child(odd)');
-
-
-// for(let i=0;i< oddTask.length;i++)
-// {
-//     oddTask[i].style.color="red";
-// }
-
-
-// let titles=document.querySelector('.title');
-// titles.style.color="purple";
+});
