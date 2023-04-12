@@ -3,9 +3,10 @@ let addTask=document.getElementById('add-task');
 let inputTask=document.getElementById('input-task');
 let taskContainer=document.getElementById('task-container');
 
-addTask.addEventListener('click',function()
+window.addEventListener('keydown',function(e)
 {
-
+   if(e.key==="Enter")
+   {
 let task=document .createElement('div');
 task.classList.add('task');
 
@@ -46,5 +47,5 @@ deleteButton.addEventListener("click",function(e)
     
     task.remove();
 })
-
+   }
 });
