@@ -39,8 +39,13 @@ inputTask.value="";
 checkButton.addEventListener("click",function()
 {
     li.style.textDecoration="line-through";
-
+    checkButton.innerHTML="Undo";
+   
 })
+
+
+
+
 
 deleteButton.addEventListener("click",function(e)
 {
