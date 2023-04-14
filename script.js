@@ -38,18 +38,18 @@ inputTask.value="";
 
 checkButton.addEventListener("click",function()
 {
-    li.style.textDecoration="line-through";
-    checkButton.innerText="Undo";
+    if (checkButton.innerText === "Completed")
+    {
+        li.style.textDecoration="line-through";
+        checkButton.innerText="Undo";
+    }
+    else
 
-    checkButton.addEventListener("click",function()
-{
-    li.style.textDecoration="none";
-    checkButton.innerHTML="Completed";
-   
-})
+    {
+        li.style.textDecoration="none";
+        checkButton.innerHTML="Completed";
+    }
 });
-
-
 
 
 deleteButton.addEventListener("click",function(e)
