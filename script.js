@@ -39,10 +39,15 @@ inputTask.value="";
 checkButton.addEventListener("click",function()
 {
     li.style.textDecoration="line-through";
-    checkButton.innerHTML="Undo";
+    checkButton.innerText="Undo";
+
+    checkButton.addEventListener("click",function()
+{
+    li.style.textDecoration="none";
+    checkButton.innerHTML="Completed";
    
 })
-
+});
 
 
 
@@ -52,5 +57,7 @@ deleteButton.addEventListener("click",function(e)
     
     task.remove();
 })
-   }
+}
+
+
 });
